@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Bungee&family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 
@@ -34,11 +36,6 @@ a:hover {
   color: yellow;
 }
 
-/*usando background no article para identificar os containers*/
-article {
-  background-color: aqua;
-}
-
 .cards {
   display: flex;
   justify-content: space-around;
@@ -52,16 +49,24 @@ article {
   height: 350px;
   border: 1px solid black;
   border-radius: 20px;
-  background-color: rgba(117, 70, 70, 0.192);
+  background-color: #242424;
+  color: white;
   font-size: 1.2em;
 }
 
 .item-p {
   padding-top: 20px;
+  font-size: 1em;
+}
+
+.titulo-cards {
+  color: #FEC400;
+  font-size: 1.5em;
 }
 
 .item-equip {
-  background-color: bisque;
+  color: white;
+  background-color: #242424;
   flex-wrap: wrap;
   width: 300px;
   border: 1px solid black;
@@ -81,4 +86,40 @@ article {
   background-color: rgb(251, 255, 0);
   border-radius: 50%;
   padding: 5px
+}
+
+/*main*/
+.container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 200px);
+  gap: 20px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.box1 {
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 20px;
+  grid-area: 1 / 1 / -1 / 3;
+  margin-left: 10px;
+}
+
+.box2 {
+  background-color: red;
+  border: 1px solid black;
+  border-radius: 20px;
+  grid-area: 1 / 3 / 4 / -1;
+}
+
+.box3 {
+  background-color: green;
+  border: 1px solid black;
+  border-radius: 20px;
+  grid-area: 4 / 3 / -1 / -1;
+}
+
+img {
+  border-radius: 20px;
 }
