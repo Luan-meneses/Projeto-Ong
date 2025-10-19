@@ -1,20 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Bungee&family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  /*Definir paleta de cores com no mínimo 8 cores (primárias, secundárias, neutras);*/
+  --neutro: #FFFFFF;
+  --preto: #000000;
+  --corPrimeira: #FEC400;
+  --corSegunda: #C19603;
+  --corTerceira: #242424;
+  --cor1: #D9C199;
+  --cor2: #7E986A;
+  --cor3: #D4D4D4;
+
+  /*Estabelecer tipografia hierárquica com no mínimo 5 tamanhos de fonte;*/
+  --fonte-padrao: "Kumbh Sans", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Kumbh Sans", sans-serif;
+  font-family: var(--fonte-padrao);
 }
-
 
 /*definindo onde vai ficar o menu*/
 .menu {
-  background-color: chartreuse;
+  height: 5vh;
+  background-color: var(--cor2);
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 nav ul li {
@@ -24,35 +40,42 @@ nav ul li {
 }
 
 .logo {
+  font-weight: 800;
   font-size: 32px;
+  color: var(--corTerceira);
   padding-left: 20px;
 }
 
 a {
+  font-weight: 600;
+  color: var(--corTerceira);
   text-decoration: none;
 }
 
 a:hover {
-  color: yellow;
+  color: var(--corPrimeira);
 }
 
+/*divisao dos cards*/
 .cards {
   display: flex;
   justify-content: space-around;
   padding: 10px 35px;
   text-align: center;
-
 }
 
-.item {
-  width: 300px;
-  height: 350px;
+.subtitulo {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 10px;
+  background-color: var(--corTerceira);
   border: 1px solid black;
   border-radius: 20px;
-  background-color: #242424;
-  color: white;
-  font-size: 1.2em;
+  color: var(--corPrimeira);
 }
+
 
 .item-p {
   padding-top: 20px;
@@ -62,30 +85,33 @@ a:hover {
 .titulo-cards {
   color: #FEC400;
   font-size: 1.5em;
+  font-weight: 800;
+}
+
+/*icone sobre MISSAO VISAO VALORES*/
+.icone {
+  background-color: var(--corPrimeira);
+  border-radius: 50%;
+  padding: 5px
+}
+
+.item {
+  width: 400px;
+  height: 350px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: var(--corTerceira);
+  color: white;
+  font-size: 1.2em;
+  padding: 10px;
 }
 
 .item-equip {
   color: white;
-  background-color: #242424;
-  flex-wrap: wrap;
-  width: 300px;
+  background-color: var(--corTerceira);
+  width: 400px;
   border: 1px solid black;
   border-radius: 5px;
-}
-
-.subtitulo {
-  text-align: center;
-  font-size: 40px;
-  padding: 10px;
-  background-color: antiquewhite;
-  border: 1px solid black;
-  border-radius: 20px;
-}
-
-.icone {
-  background-color: rgb(251, 255, 0);
-  border-radius: 50%;
-  padding: 5px
 }
 
 /*main*/
@@ -94,12 +120,13 @@ a:hover {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(6, 200px);
   gap: 20px;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding: 0 5vw;
+  /* 5% da largura da tela */
 }
 
+
 .box1 {
-  background-color: bisque;
+  background-color: var(--neutro);
   border: 1px solid black;
   border-radius: 20px;
   grid-area: 1 / 1 / -1 / 3;
@@ -107,19 +134,163 @@ a:hover {
 }
 
 .box2 {
-  background-color: red;
-  border: 1px solid black;
-  border-radius: 20px;
   grid-area: 1 / 3 / 4 / -1;
 }
 
 .box3 {
-  background-color: green;
-  border: 1px solid black;
-  border-radius: 20px;
   grid-area: 4 / 3 / -1 / -1;
 }
 
-img {
-  border-radius: 20px;
+.img-fundo {
+  background: var(--preto) url(Imagens/vista-superior-fundo-da-textura-tecido-1200.jpg) center center no-repeat fixed;
+  background-size: cover;
+}
+
+/*box1 lateral card*/
+.fundoneutro {
+  background-color: var(--corTerceira);
+}
+
+.texto-container {
+  display: inline-block;
+  font-size: 18px;
+  text-align: left;
+  padding: 10px 20px 20px 20px;
+}
+
+.img-container {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  padding: 5px;
+}
+
+.sub-box1 {
+  font-size: 28px;
+  padding: 10px 20px;
+  color: var(--corPrimeira);
+}
+
+.rede-social {
+  padding: 20px;
+}
+
+/* Estilo geral dos boxes */
+.box2,
+.box3 {
+  background-color: var(--neutro);
+  display: flex;
+  align-items: stretch;
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+
+/* Garante que o artigo dentro ocupe 100% da largura restante */
+.box2 article,
+.box3 article {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  gap: 20px;
+}
+
+/* A imagem ocupa toda a altura do container */
+.box2 .img2-container,
+.box3 .img2-container {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.box2 article h3,
+.box3 article h3 {
+  color: var(--corPrimeira);
+  background-color: var(--corTerceira);
+  display: inline-block;
+  margin-top: 0;
+}
+
+.box2 article p,
+.box3 article p {
+  flex: 1;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+footer {
+  background-color: var(--cor2);
+  text-align: center;
+}
+
+footer>p {
+  color: var(--corTerceira);
+  font-size: 18px;
+}
+
+footer>nav {
+  text-decoration: none;
+  padding: 10px;
+}
+
+.menu-rodape {
+  padding: 5px;
+}
+
+/*FORMULARIO*/
+form {
+  background-color: var(--cor3);
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  /* permite redimensionar verticalmente */
+  min-height: 80px;
+}
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
 }
