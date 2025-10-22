@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Bungee&family=Kumbh+Sans:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  /*Definir paleta de cores com no mínimo 8 cores (primárias, secundárias, neutras);*/
+  /*Paleta de cores*/
   --neutro: #FFFFFF;
   --preto: #000000;
   --corPrimeira: #FEC400;
@@ -11,7 +11,7 @@
   --cor2: #7E986A;
   --cor3: #D4D4D4;
 
-  /*Estabelecer tipografia hierárquica com no mínimo 5 tamanhos de fonte;*/
+  /*Tipografia*/
   --fonte-padrao: "Kumbh Sans", sans-serif;
 }
 
@@ -22,7 +22,7 @@
   font-family: var(--fonte-padrao);
 }
 
-/*definindo onde vai ficar o menu*/
+/* MENU */
 .menu {
   height: 5vh;
   background-color: var(--cor2);
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding: 10px 20px;
 }
 
 nav ul li {
@@ -43,7 +43,6 @@ nav ul li {
   font-weight: 800;
   font-size: 32px;
   color: var(--corTerceira);
-  padding-left: 20px;
 }
 
 a {
@@ -56,12 +55,14 @@ a:hover {
   color: var(--corPrimeira);
 }
 
-/*divisao dos cards*/
+/* CARDS */
 .cards {
   display: flex;
   justify-content: space-around;
-  padding: 10px 35px;
+  flex-wrap: wrap;
+  padding: 10px 20px;
   text-align: center;
+  gap: 20px;
 }
 
 .subtitulo {
@@ -76,7 +77,6 @@ a:hover {
   color: var(--corPrimeira);
 }
 
-
 .item-p {
   padding-top: 20px;
   font-size: 1em;
@@ -88,11 +88,10 @@ a:hover {
   font-weight: 800;
 }
 
-/*icone sobre MISSAO VISAO VALORES*/
 .icone {
   background-color: var(--corPrimeira);
   border-radius: 50%;
-  padding: 5px
+  padding: 5px;
 }
 
 .item {
@@ -106,24 +105,14 @@ a:hover {
   padding: 10px;
 }
 
-.item-equip {
-  color: white;
-  background-color: var(--corTerceira);
-  width: 400px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-/*main*/
+/* MAIN GRID */
 .container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(6, 200px);
   gap: 20px;
   padding: 0 5vw;
-  /* 5% da largura da tela */
 }
-
 
 .box1 {
   background-color: var(--neutro);
@@ -146,7 +135,6 @@ a:hover {
   background-size: cover;
 }
 
-/*box1 lateral card*/
 .fundoneutro {
   background-color: var(--corTerceira);
 }
@@ -174,28 +162,23 @@ a:hover {
   padding: 20px;
 }
 
-/* Estilo geral dos boxes */
 .box2,
 .box3 {
   background-color: var(--neutro);
   display: flex;
-  align-items: stretch;
   padding: 5px;
   border-radius: 12px;
   border: 1px solid black;
 }
 
-/* Garante que o artigo dentro ocupe 100% da largura restante */
 .box2 article,
 .box3 article {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
   width: 100%;
   gap: 20px;
 }
 
-/* A imagem ocupa toda a altura do container */
 .box2 .img2-container,
 .box3 .img2-container {
   width: 40%;
@@ -208,7 +191,6 @@ a:hover {
 .box3 article h3 {
   color: var(--corPrimeira);
   background-color: var(--corTerceira);
-  display: inline-block;
   margin-top: 0;
 }
 
@@ -219,9 +201,11 @@ a:hover {
   line-height: 1.5;
 }
 
+/* FOOTER */
 footer {
   background-color: var(--cor2);
   text-align: center;
+  padding: 10px 0;
 }
 
 footer>p {
@@ -238,7 +222,7 @@ footer>nav {
   padding: 5px;
 }
 
-/*FORMULARIO*/
+/* FORMULÁRIO */
 form {
   background-color: var(--cor3);
   padding: 20px 25px;
@@ -275,7 +259,6 @@ textarea {
 
 textarea {
   resize: vertical;
-  /* permite redimensionar verticalmente */
   min-height: 80px;
 }
 
@@ -293,4 +276,98 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+/*RESPONSIVIDADE*/
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .box1, .box2, .box3 {
+    grid-area: unset;
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+
+  nav ul li {
+    display: block;
+    padding: 5px 0;
+  }
+
+  .cards {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .item {
+    width: 100%;
+    height: auto;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 0 15px;
+  }
+
+  .box2 article,
+  .box3 article {
+    flex-direction: column;
+  }
+
+  .box2 .img2-container,
+  .box3 .img2-container {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+/* Smartphones pequenos (até 480px) */
+@media (max-width: 480px) {
+  .subtitulo {
+    font-size: 1.5rem;
+  }
+
+  .titulo-cards {
+    font-size: 1.2rem;
+  }
+
+  .texto-container {
+    font-size: 16px;
+  }
+
+  footer > p {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }
