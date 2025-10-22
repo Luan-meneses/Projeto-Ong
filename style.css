@@ -21,7 +21,6 @@
   box-sizing: border-box;
   font-family: var(--fonte-padrao);
 }
-
 /* MENU */
 .menu {
   height: 5vh;
@@ -105,13 +104,22 @@ a:hover {
   padding: 10px;
 }
 
+.item-equip {
+  color: white;
+  background-color: var(--corTerceira);
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+
 /* MAIN GRID */
 .container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(6, 200px);
   gap: 20px;
-  padding: 0 5vw;
+  padding: 0 5vw; 
 }
 
 .box1 {
