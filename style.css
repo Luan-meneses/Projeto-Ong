@@ -389,16 +389,19 @@ main {
 }
 
 .card-container {
-  width: 80%; 
+  width: 80%;
   background-color: var(--neutro);
   border-radius: 10px;
   border: 1px solid black;
-  margin-bottom: 30px;
+  margin: 0 auto 30px auto; /* Centraliza e adiciona espaçamento inferior */
+  padding: 20px; /* Adiciona respiro interno */
+  box-sizing: border-box;
 }
 
 .sem-margin {
   margin: 0;
 }
+
 .container-projetos {
   width: 80%;
   margin: auto;
@@ -416,6 +419,7 @@ main {
   border-radius: 10px;
   display: inline-block;
   width: 40%;
+  min-width: 250px; /* Evita que o título fique muito pequeno */
 }
 
 .contendo {
@@ -423,6 +427,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap; /* Permite quebra em telas médias */
 }
 
 .contendo img {
@@ -430,22 +435,62 @@ main {
   height: 400px;
   object-fit: cover;
   border-radius: 8px;
+  flex-shrink: 0; /* Evita deformar */
 }
 
 .contendo p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   flex: 1;
   text-align: justify;
+  line-height: 1.6;
 }
 
-@media (max-width: 600px) {
+/* ============ RESPONSIVIDADE ============ */
+@media (max-width: 1024px) {
+  .contendo img {
+    width: 100%;
+    height: auto;
+  }
+
   .contendo {
     flex-direction: column;
     text-align: center;
   }
 
-  .contendo img {
+  .contendo p {
     width: 100%;
-    height: auto;
+    padding: 0 10px;
+  }
+
+  .container-projetos h3 {
+    width: 80%;
+    font-size: 20px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .container-projetos {
+    width: 95%;
+  }
+
+  .contendo {
+    gap: 10px;
+  }
+
+  .contendo p {
+    font-size: 1em;
+  }
+
+  .container-projetos h3 {
+    width: 90%;
+    font-size: 18px;
+    line-height: 45px;
+    border-width: 3px;
   }
 }
