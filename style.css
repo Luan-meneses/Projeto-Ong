@@ -21,6 +21,7 @@
   box-sizing: border-box;
   font-family: var(--fonte-padrao);
 }
+
 /* MENU */
 .menu {
   height: 5vh;
@@ -119,7 +120,7 @@ a:hover {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(6, 200px);
   gap: 20px;
-  padding: 0 5vw; 
+  padding: 0 5vw;
 }
 
 .box1 {
@@ -295,7 +296,9 @@ button:hover {
     grid-template-rows: auto;
   }
 
-  .box1, .box2, .box3 {
+  .box1,
+  .box2,
+  .box3 {
     grid-area: unset;
     width: 100%;
   }
@@ -371,11 +374,78 @@ button:hover {
     font-size: 16px;
   }
 
-  footer > p {
+  footer>p {
     font-size: 14px;
   }
 
   button {
     font-size: 14px;
+  }
+}
+
+/*PROJETOS*/
+main {
+  background-color: var(--corTerceira);
+}
+
+.card-container {
+  width: 80%; 
+  background-color: var(--neutro);
+  border-radius: 10px;
+  border: 1px solid black;
+  margin-bottom: 30px;
+}
+
+.sem-margin {
+  margin: 0;
+}
+.container-projetos {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.container-projetos h3 {
+  line-height: 60px;
+  color: var(--corPrimeira);
+  background-color: var(--corTerceira);
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 5px solid var(--corSegunda);
+  border-radius: 10px;
+  display: inline-block;
+  width: 40%;
+}
+
+.contendo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contendo img {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.contendo p {
+  font-size: 1.5em;
+  flex: 1;
+  text-align: justify;
+}
+
+@media (max-width: 600px) {
+  .contendo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contendo img {
+    width: 100%;
+    height: auto;
   }
 }
